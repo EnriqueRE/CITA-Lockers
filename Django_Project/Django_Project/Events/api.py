@@ -1,7 +1,7 @@
 from tastypie import fields
 from tastypie.resources import ModelResource
 from tastypie.authorization import Authorization
-from LockersApp.models import Locker, User, Event
+from Events.models import Locker, User, Event
 
 from django.conf.urls import url
 
@@ -28,9 +28,7 @@ class UserResource(ModelResource):
         include_absolute_uri = False
 
 class EventResource(ModelResource):
-    #close_events = fields.CharField(attribute = 'close_events')
-    #total_events = fields.IntegerField(readonly=True)
-
+    
     class Meta:
         queryset = Event.objects.all().order_by('date')
 
@@ -38,7 +36,6 @@ class EventResource(ModelResource):
         fields = ['name', 'usergpf1','Description', 'locker', 'zone', 'date', 'count_event']
         authorization = Authorization()
         allowed_methods = ['get', 'post', 'delete', 'put']
-        #list_allowed_methods = ['delete']
         detail_uri_name = 'usergpf1'
 
         filtering = {'usergpf1':['exact']}
