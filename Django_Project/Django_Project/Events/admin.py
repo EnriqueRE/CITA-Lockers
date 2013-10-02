@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Events.models import User, Locker, Event, Zone
+from Events.models import User, Locker, Event
 
 class LockerAdmin(admin.ModelAdmin):
     # ...
