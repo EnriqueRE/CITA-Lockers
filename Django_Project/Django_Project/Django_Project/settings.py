@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'tastypie',
     'Events',
+    'LockerZones',
 )
 
 # A sample logging configuration. The only tangible logging
