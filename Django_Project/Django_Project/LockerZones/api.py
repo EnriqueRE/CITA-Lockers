@@ -9,7 +9,7 @@ class LockerZoneResourse(ModelResourse):
   class Meta:
     queryset = LockerZone.objects.all()
     resourse_name = 'LockerZone'
-    fields = ['name', 'description']
+    fields = ['name', 'description', 'total', 'occupied', 'free']
     authorization = Authorization()
     allowed_methods = ['get', 'post', 'delete', 'put']
     include_resourse_uri = False
