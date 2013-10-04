@@ -52,7 +52,7 @@ for Area in areaList:
 	j = req.json()
 	total = int(j['total'])
 	free = total - closed
-	values = {"closed": closed, "free": free}
+	values = {"occupied": closed, "free": free}
 	req = requests.put(url_zone + Area + "/", data = json.dumps(values), headers = headers)
 	closed = 0
 
