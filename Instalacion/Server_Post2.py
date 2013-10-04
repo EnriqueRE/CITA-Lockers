@@ -1,6 +1,4 @@
 import json
-# import urllib
-#import urllib2
 import time
 import requests
 import csv
@@ -10,8 +8,10 @@ start_time = time.time()
 
 csvFile = csv.reader(open('G:\Users\Agustin de la Rocha\Desktop\Audit_Trail', 'rb'))
 
-url_event = "http://192.168.2.13:8000/api/v1/Event/"
-url_zone = "http://192.168.2.13:8000/api/v1/Zone/"
+ip_address = "http://10.33.24.188:8000"
+
+url_event = ip_address + "/api/v1/Event/"
+url_zone = ip_address + "/api/v1/LockerZone/"
 
 headers = {'Content-type': 'application/json'}
 
@@ -31,7 +31,6 @@ for i in reversed(rows):
 	newFile.append(i)
 
 for row in rows:
-	#if row[3] not in areaList:
 		newList.append(row)
 
 		if row[5] not in areaList:
@@ -51,9 +50,7 @@ for Area in areaList:
 	print closed
 	req = requests.get(url_zone + Area)
 	j = req.json()
-	#data = json.loads(j)
 	total = int(j['total'])
-	#print data
 	free = total - closed
 	values = {"closed": closed, "free": free}
 	req = requests.put(url_zone + Area + "/", data = json.dumps(values), headers = headers)
