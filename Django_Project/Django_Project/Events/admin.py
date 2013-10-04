@@ -21,6 +21,6 @@ class LockerEventAdmin(admin.ModelAdmin):
     # ...
     #list_display = ('name', 'usergpf1','Description', 'locker', 'zone', 'date')
 
-    list_display = ('name', 'usergpf1', 'locker', 'zone', 'date')
+    list_display = ('name', 'usergpf1','description', 'locker', 'zone', 'date')
 
 admin.site.register(Event,LockerEventAdmin)
