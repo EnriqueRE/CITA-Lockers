@@ -33,7 +33,7 @@ class EventResource(ModelResource):
         queryset = Event.objects.all().order_by('date')
 
         resource_name = 'Event'
-        fields = ['name', 'usergpf1','Description', 'locker', 'zone', 'date', 'count_event']
+        fields = ['name', 'usergpf1','description', 'locker', 'zone', 'date', 'count_event']
         authorization = Authorization()
         allowed_methods = ['get', 'post', 'delete', 'put']
         detail_uri_name = 'usergpf1'
