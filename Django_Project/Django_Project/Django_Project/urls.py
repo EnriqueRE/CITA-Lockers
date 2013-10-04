@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.defaults import *
 from tastypie.api import Api
 from Events.api import LockersResource, UserResource, EventResource
-from LockerZones.api import LockerZoneResourse
+from LockerZones.api import LockerZoneResource
 
 v1_api = Api(api_name='v1')
 v1_api.register(UserResource())
