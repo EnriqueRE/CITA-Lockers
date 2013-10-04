@@ -14,3 +14,4 @@ class LockerZoneResource(ModelResource):
     allowed_methods = ['get', 'post', 'delete', 'put']
     include_resource_uri = False
     include_absolute_uri = False
+    detail_uri_name = 'name'
