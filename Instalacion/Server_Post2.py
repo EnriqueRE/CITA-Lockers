@@ -6,9 +6,9 @@ import csv
 
 start_time = time.time()
 
-csvFile = csv.reader(open('G:\Users\Agustin de la Rocha\Desktop\Audit_Trail', 'rb'))
+csvFile = csv.reader(open('/Users/luishoracio/PycharmProjects/CITA-Lockers/Documentacion/Audit_Trail', 'rb'))
 
-ip_address = "http://10.33.24.188:8000"
+ip_address = "http://127.0.0.1:8000"
 
 url_event = ip_address + "/api/v1/Event/"
 url_zone = ip_address + "/api/v1/LockerZone/"
@@ -36,11 +36,11 @@ for row in rows:
 		if row[5] not in areaList:
 			areaList.add(row[5])
 
-		values = {"locker": row[4], "name": row[3], "resource_uri": "/api/v1/Event/1/", "usergpf1": row[2], "zone": row[5], "date": row[0], "Description": row[1]}
+		values = {"locker": row[4], "name": row[3], "resource_uri": "/api/v1/Event/1/", "usergpf1": row[2], "zone": row[5], "date": row[0], "description": row[1]}
 
 		req = requests.post(url_event, data = json.dumps(values), headers = headers) 
 
-for Area in areaList:
+"""for Area in areaList:
 	for row in newFile:
 		if Area == row[5]:
 			if row[4] not in lockerList:
@@ -54,7 +54,7 @@ for Area in areaList:
 	free = total - closed
 	values = {"occupied": closed, "free": free}
 	req = requests.put(url_zone + Area + "/", data = json.dumps(values), headers = headers)
-	closed = 0
+	closed = 0"""
 
 print areaList
 print newList

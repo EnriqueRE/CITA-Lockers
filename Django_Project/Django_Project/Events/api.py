@@ -11,7 +11,7 @@ class LockersResource(ModelResource):
         resource_name = 'Locker'
         fields = ['name', 'lastname', 'zone', 'description']
         authorization = Authorization()
-        allowed_methods = ['get', 'post', 'delete' 'put']
+        allowed_methods = ['get', 'post', 'delete', 'put']
         include_resource_uri = False
         include_absolute_uri = False
 
@@ -23,7 +23,7 @@ class UserResource(ModelResource):
         resource_name = 'User'
         fields = ['name', 'lastname']
         authorization = Authorization()
-        allowed_methods = ['get', 'post', 'delete' 'put']
+        allowed_methods = ['get', 'post', 'delete', 'put']
         include_resource_uri = False
         include_absolute_uri = False
 

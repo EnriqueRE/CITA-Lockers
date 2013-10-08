@@ -1,11 +1,13 @@
 from django.db import models
 
+
 class User(models.Model):
     name = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
 
     def __unicode__(self):
         return self.name
+
 
 class Locker(models.Model):
     lockerUser = models.OneToOneField(User)
@@ -15,7 +17,8 @@ class Locker(models.Model):
 
     def __unicode__(self):
         return self.name
-        
+
+
 class Event(models.Model):
     name = models.CharField(max_length=200)
     usergpf1 = models.CharField(max_length=200)
